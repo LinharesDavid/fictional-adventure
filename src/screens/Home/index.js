@@ -1,10 +1,17 @@
-import React from 'react';
-import { View, Platform, StyleSheet, Text } from 'react-native';
+import React, { useCallback } from 'react';
+import { View, Platform, StyleSheet, Text, Button } from 'react-native';
 
-export default function App() {
+export default function Home(props) {
+    const {navigation} = props;
+    const onPresstoList = useCallback(() => {
+        navigation.navigate('List');
+    }, [navigation]);
+
+
 return <View style={styles.container}>
     <Text style={styles.welcome}>Home</Text>
     <Text style={styles.platformText}>{platformText}</Text>
+    <Button onPress={onPresstoList} title="Go to List"/>
 </View>; 
 } 
 
