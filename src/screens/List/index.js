@@ -18,7 +18,7 @@ function mapCategories(categories) {
 export default function List(props) {
     const {navigation} = props;
     const [data, setData] = useState([]);
-    
+
     useEffect(() => {
         fetch('https://api.chucknorris.io/jokes/categories')
             .then(response => response.json())
@@ -26,8 +26,8 @@ export default function List(props) {
             .catch(error => console.log(error));
     }, [])
 
-    const onPress = useCallback(() => {
-        navigation.navigate('Home');
+    const onPress = useCallback((item) => {
+        navigation.navigate('Detail', item.name);
       }, [navigation]);
     
       return (
