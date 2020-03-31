@@ -24,5 +24,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 5,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    textTransform: 'capitalize'
   }
 });
